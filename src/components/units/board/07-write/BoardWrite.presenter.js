@@ -12,7 +12,9 @@ export default function BoardWriteUI(props) {
         <RedInput type="text" onChange={props.onChangeContents}></RedInput>
       </div>
 
-      <BlueBtn onClick={props.onClickSubmit}>GraphQl-API 요청하기</BlueBtn>
+      <BlueBtn onClick={props.onClickSubmit} mycolor={props.isActive}>
+        GraphQl-API 요청하기
+      </BlueBtn>
     </div>
   );
 }

@@ -5,6 +5,8 @@ import { useState } from "react";
 import { graphqlsetting } from "./BoardWrite.querys";
 
 export default function BoardWrite() {
+  const [isActive, setIsActive] = useState(false);
+
   const [myFunc] = useMutation(graphqlsetting);
   const [writer, setWriter] = useState("");
   const [title, setTitle] = useState("");
@@ -12,12 +14,21 @@ export default function BoardWrite() {
 
   const onChangeWriter = (event) => {
     setWriter(event.target.value);
+    if (event.target.value && title && contents) {
+      setIsActive(true);
+    }
   };
   const onChangeTitle = (event) => {
     setTitle(event.target.value);
+    if (writer && event.target.value && contents) {
+      setIsActive(true);
+    }
   };
   const onChangeContents = (event) => {
     setContents(event.target.value);
+    if (writer && title && event.target.value) {
+      setIsActive(true);
+    }
   };
 
   const onClickSubmit = async () => {
@@ -38,6 +49,7 @@ export default function BoardWrite() {
         onChangeTitle={onChangeTitle}
         onChangeContents={onChangeContents}
         onClickSubmit={onClickSubmit}
+        isActive={isActive}
       />
     </div>
   );
