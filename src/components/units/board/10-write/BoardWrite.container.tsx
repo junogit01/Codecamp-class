@@ -4,11 +4,8 @@ import { useMutation } from "@apollo/client";
 import { useState, ChangeEvent } from "react";
 import { graphqlsetting, graphqlupdate } from "./BoardWrite.querys";
 import { useRouter } from "next/router";
+import { IBoardWriteProps, IMyvariables } from "./BoardWrite.types";
 
-interface IBoardWriteProps {
-  isEdit: boolean;
-  data?: any;
-}
 export default function BoardWrite(props: IBoardWriteProps) {
   const router = useRouter();
   const [myFunc] = useMutation(graphqlsetting);
@@ -42,12 +39,6 @@ export default function BoardWrite(props: IBoardWriteProps) {
   };
 
   const onClickUpdate = async () => {
-    interface IMyvariables {
-      number: number;
-      writer?: string;
-      title?: string;
-      contents?: string;
-    }
     const myVariables: IMyvariables = {
       number: Number(router.query.number),
     };
