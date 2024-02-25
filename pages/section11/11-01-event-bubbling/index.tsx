@@ -19,13 +19,13 @@ export default function StaticRoutingBoardMovedPage() {
     alert(event?.currentTarget.id + "님이 작성한 글입니다.");
   };
 
-  const qqq = () => {
-    alert("클릭 타이틀");
-  };
+  // const qqq = () => {
+  //   alert("클릭 타이틀");
+  // };
   return (
     <div>
       {data?.fetchBoards.map((el: any) => (
-        <div id={el.writer} onClick={onClickAlert}>
+        <div key={el.id} id={el.writer} onClick={onClickAlert}>
           <span>
             <input type="checkbox" />
           </span>

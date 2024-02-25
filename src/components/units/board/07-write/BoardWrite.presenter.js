@@ -1,6 +1,9 @@
 import { RedInput, BlueBtn } from "./BoardWrite.styles";
 
-export default function BoardWriteUI(props) {
+interface IProps {
+  onChangeWriter: () => void
+}
+export default function BoardWriteUI(props: IProps) {
   return (
     <div>
       <div>
