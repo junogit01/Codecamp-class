@@ -11,7 +11,7 @@ const FETCH_BOARDS = gql`
   }
 `;
 
-export default function StaticRoutingBoardMovedPage() {
+export default function StaticRoutingBoardMovedPage(): JSX.Element {
   const { data } = useQuery(FETCH_BOARDS);
   console.log(data?.fetchBoards);
 
