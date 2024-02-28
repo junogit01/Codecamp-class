@@ -1,6 +1,7 @@
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { AppProps } from "next/app";
 import React from "react";
+import Layout from "../src/commons/layout";
 
 export default function App({ Component }: AppProps): JSX.Element {
   const client = new ApolloClient({
@@ -9,7 +10,9 @@ export default function App({ Component }: AppProps): JSX.Element {
   });
   return (
     <ApolloProvider client={client}>
-      <Component />
+      <Layout>
+        <Component />
+      </Layout>
     </ApolloProvider>
   );
 }
