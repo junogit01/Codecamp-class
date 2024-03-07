@@ -81,6 +81,7 @@ export default function ImageUploadPage(): JSX.Element {
     });
     console.log(data);
   };
+  // 업로드 되지 않음 아폴로세팅 다시 보기
 
   return (
     <div>
