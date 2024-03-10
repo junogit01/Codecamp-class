@@ -46,6 +46,8 @@ export default function StaticRoutingBoardMovedPage(): JSX.Element {
     getDebounce(event.currentTarget.value);
   };
 
+  // 색갈 중간중간 안변하는데 이도 한번 확인 필요
+
   return (
     <div>
       검색어 입력 : <input type="text" onChange={onChangeSearch} />
