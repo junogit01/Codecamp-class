@@ -6,6 +6,7 @@ import {
 } from "@apollo/client";
 import { createUploadLink } from "apollo-upload-client";
 
+const GLOBAL_STATE = new InMemoryCache();
 interface IApolloSettingProps {
   children: JSX.Element;
 }
@@ -15,7 +16,7 @@ export default function ApolloSetting(props: IApolloSettingProps) {
   });
   const client = new ApolloClient({
     link: ApolloLink.from([uploadLink]), // 서버의 URI 주소를 작성
-    cache: new InMemoryCache(), // PC 메모리에다가 백엔드에서 받은 데이터를 임시로 저장해 놓는다.
+    cache: GLOBAL_STATE, // PC 메모리에다가 백엔드에서 받은 데이터를 임시로 저장해 놓는다.
   });
   // prettier-ignore
   return <ApolloProvider client={client}>
