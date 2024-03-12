@@ -66,7 +66,6 @@ export default function ImageUploadPage(): JSX.Element {
   const onChangeContents = (event: ChangeEvent<HTMLInputElement>): void => {
     setContents(event.target.value);
   };
-  // inputs 다시 작성필요함
 
   const onClickSubmit = async (): Promise<void> => {
     const data = await myFunc({

@@ -68,6 +68,7 @@ export default function StaticRoutingBoardMovedPage(): JSX.Element {
               ))}
           </span>
           <span style={{ margin: "10px" }}>{el.contents}</span>
+          <span style={{ margin: "10px" }}>{el._id}</span>
         </div>
       ))}
       {new Array(10).fill(1).map((_, index) => (

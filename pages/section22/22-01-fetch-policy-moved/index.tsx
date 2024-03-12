@@ -21,7 +21,7 @@ export default function FetchPolicyMovedPage(): JSX.Element {
     <div>
       {data?.fetchBoards.map((el) => (
         <div key={el._id}>
-          <span style={{ margin: "10px" }}>{el.writer}</span>
+          <span style={{ margin: "10px" }}>{el.title}</span>
           <span style={{ margin: "10px" }}>{el.contents}</span>
         </div>
       ))}
